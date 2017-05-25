@@ -4,10 +4,12 @@
 \alias{get_water_conditions}
 \title{Get Water Conditions for a Monitoring Station}
 \usage{
-get_water_conditions(station, ...)
+get_water_conditions(station, na.rm = FALSE, ...)
 }
 \arguments{
 \item{station}{A list containing station information. See \code{\link{get_station}}.}
+
+\item{na.rm}{A logical value indicating whether \code{NA} values should be removed from the results (default: \code{FALSE}).}
 
 \item{...}{Additional arguments (not supported)}
 }

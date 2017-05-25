@@ -1,9 +1,11 @@
 #' Get Water Conditions for a Monitoring Station
 #'
 #' @param station A list containing station information. See \code{\link{get_station}}.
+#' @param na.rm A logical value indicating whether \code{NA} values should be removed from the results (default: \code{FALSE}).
 #' @param ... Additional arguments (not supported)
 #'
 #' @return A tibble
+#' @importFrom magrittr %>%
 #' @export
 #'
 #' @examples
@@ -11,7 +13,7 @@
 #' s <- get_station(code = "FBLW")
 #' get_water_conditions(station = s)
 #'
-get_water_conditions <- function(station, ...) {
+get_water_conditions <- function(station, na.rm = FALSE, ...) {
     measurements <- c(
         "SaltA" = "Salinity",
         "SaltB" = "Salinity",
@@ -27,7 +29,7 @@ get_water_conditions <- function(station, ...) {
         file = sprintf("http://www.nwd-wc.usace.army.mil/nws/hh/textdata/lkw_%s.prn", tolower(station$code)),
         skip = 5
     ) %>%
-        head(n = -2L) %>%
+        utils::head(n = -2L) %>%
         stringi::stri_split_regex(pattern = "\\s{2,}", simplify = TRUE) %>%
         tibble::as_tibble() %>%
         dplyr::rename(Time = V1) %>%
@@ -89,9 +91,9 @@ get_water_conditions <- function(station, ...) {
             Depth = station$depths[stringi::stri_sub(Field, -1)],
             Measurement = forcats::as_factor(measurements[Field])
         ) %>%
-        dplyr::select(Time, Station, Depth, Measurement, Value) %>%
-        na.omit()
+        dplyr::select(Time, Station, Depth, Measurement, Value)
+
+    if (na.rm) z %<>% stats::na.omit()
 
     z
 }
-
