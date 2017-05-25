@@ -12,6 +12,8 @@ LazyData: true
 Imports: dplyr,
     readr,
     stringi,
-    tibble
+    tibble,
+    tidyr
 URL: https://github.com/briandconnelly/acewater
 BugReports: https://github.com/briandconnelly/acewater/issues
+RoxygenNote: 6.0.1

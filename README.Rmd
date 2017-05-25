@@ -1,0 +1,47 @@
+---
+title: acewater
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)]()
+
+acewater provides an interface to the [US Army Corps of Engineers' water monitoring data along the Lake Washington Ship Canal](http://www.nwd-wc.usace.army.mil/nws/hh/www/index.html).
+The main function, `get_water_conditions` returns a tidy data frame (a [tibble](http://tibble.tidyverse.org)).
+
+## Installation
+
+You can install acewater from github with:
+
+```{r gh-installation, eval = FALSE}
+# install.packages("devtools")
+devtools::install_github("briandconnelly/acewater")
+```
+
+## Example
+
+Get the most recent conditions at the Fremont Bridge (station FBLW)
+
+```{r example}
+library(acewater)
+library(magrittr)
+
+get_station("FBLW") %>%
+    get_water_conditions()
+```
+
+## Contributer Code of Conduct
+
+Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md).
+By participating in this project you agree to abide by its terms.
+
