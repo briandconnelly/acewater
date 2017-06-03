@@ -19,27 +19,26 @@ devtools::install_github("briandconnelly/acewater")
 Example
 -------
 
-Get the most recent conditions at the Fremont Bridge (station FBLW)
+### Get the most recent conditions at the Fremont Bridge (station FBLW)
 
 ``` r
 library(acewater)
 library(magrittr)
 
-get_station("FBLW") %>%
-    get_water_conditions()
+get_water_conditions("FBLW")
 #> # A tibble: 156 x 5
 #>                   Time Station Depth Measurement Value
 #>                 <dttm>   <chr> <dbl>      <fctr> <dbl>
-#>  1 2017-05-24 11:00:00    FBLW    18    Salinity  0.04
-#>  2 2017-05-24 12:00:00    FBLW    18    Salinity  0.04
-#>  3 2017-05-24 13:00:00    FBLW    18    Salinity  0.04
-#>  4 2017-05-24 14:00:00    FBLW    18    Salinity  0.04
-#>  5 2017-05-24 15:00:00    FBLW    18    Salinity  0.04
-#>  6 2017-05-24 16:00:00    FBLW    18    Salinity  0.04
-#>  7 2017-05-24 17:00:00    FBLW    18    Salinity  0.04
-#>  8 2017-05-24 18:00:00    FBLW    18    Salinity  0.04
-#>  9 2017-05-24 19:00:00    FBLW    18    Salinity  0.04
-#> 10 2017-05-24 20:00:00    FBLW    18    Salinity  0.04
+#>  1 2017-06-02 10:00:00    FBLW    18    Salinity  0.04
+#>  2 2017-06-02 11:00:00    FBLW    18    Salinity  0.04
+#>  3 2017-06-02 12:00:00    FBLW    18    Salinity  0.04
+#>  4 2017-06-02 13:00:00    FBLW    18    Salinity  0.04
+#>  5 2017-06-02 14:00:00    FBLW    18    Salinity  0.04
+#>  6 2017-06-02 15:00:00    FBLW    18    Salinity  0.04
+#>  7 2017-06-02 16:00:00    FBLW    18    Salinity  0.04
+#>  8 2017-06-02 17:00:00    FBLW    18    Salinity  0.04
+#>  9 2017-06-02 18:00:00    FBLW    18    Salinity  0.04
+#> 10 2017-06-02 19:00:00    FBLW    18    Salinity  0.04
 #> # ... with 146 more rows
 ```
 

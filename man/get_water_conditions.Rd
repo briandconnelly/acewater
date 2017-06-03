@@ -7,7 +7,7 @@
 get_water_conditions(station, na.rm = FALSE, ...)
 }
 \arguments{
-\item{station}{A list containing station information. See \code{\link{get_station}}.}
+\item{station}{Water monitoring station code (e.g. "FBLW").}
 
 \item{na.rm}{A logical value indicating whether \code{NA} values should be removed from the results (default: \code{FALSE}).}
 
@@ -18,10 +18,4 @@ A tibble
 }
 \description{
 Get Water Conditions for a Monitoring Station
-}
-\examples{
-library(acewater)
-s <- get_station(code = "FBLW")
-get_water_conditions(station = s)
-
 }

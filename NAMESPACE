@@ -2,4 +2,6 @@
 
 export(get_station)
 export(get_water_conditions)
+export(station_name)
+importFrom(magrittr,"%<>%")
 importFrom(magrittr,"%>%")
