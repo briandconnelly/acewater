@@ -60,5 +60,8 @@ get_water_conditions.ace_station <- function(station, na.rm = FALSE, ...) {
 #' @rdname get_water_conditions
 #' @export
 get_water_conditions.character <- function(station, na.rm = FALSE, ...) {
+    if (length(station) > 1) {
+        stop("Must supply only one station", call. = FALSE)
+    }
     get_water_conditions(get_station(station))
 }

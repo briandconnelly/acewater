@@ -1,4 +1,4 @@
-# acewater NEXT
+# acewater 0.2.1 (2017-06-07)
 
 * Added `ace_station` constructor
     * stations data is now a list of ace_station objects
@@ -6,6 +6,7 @@
     * `get_water_conditions` now works with `ace_station` objects
 * `get_water_conditions` now a generic function
     * Supports for specifying station as character vector (e.g. "FBLW") or `ace_station` object
+
 
 # acewater 0.2.0 (2017-06-07)
 
@@ -17,6 +18,7 @@
 * `get_station` now returns an `ace_station` object
 * Added `station_name` helper function
 * Added basic unit testing framework
+
 
 # acewater 0.1.0
 

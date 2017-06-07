@@ -32,8 +32,8 @@ ace_station <- function(name, code, data_columns, depths = c(), url = NULL) {
                 is.null(url),
                 sprintf(
                     "http://www.nwd-wc.usace.army.mil/nws/hh/textdata/lkw_%s.prn",
-                        tolower(code)
-                    ),
+                    tolower(code)
+                ),
                 url
             )
         ),
