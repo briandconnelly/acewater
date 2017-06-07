@@ -1,3 +1,10 @@
+# acewater NEXT
+
+* Internal data updates
+    * Added ace_projects data set, containing information about different basins/projects
+    * Renamed stations as ace_stations
+
+
 # acewater 0.3.0 (2017-06-07)
 
 * Now works with all stations in the Lake Washington Ship Canal

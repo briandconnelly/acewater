@@ -1,6 +1,19 @@
-# Stations contains information about known monitoring stations
+# ace_project contains a list of project names and their codes
+ace_projects <- list(
+    "chh" = "Chehalis River Basin",
+    "ewa" = "Eastern Washington Rivers",
+    "flt" = "Flathead and Clark Fork Rivers",
+    "grn" = "Green River Basin",
+    "kot" = "Kootenai River Basin",
+    "lkw" = "Lake Washington",
+    "pnd" = "Pend Oreille River Basin",
+    "puy" = "Puyallup River Basin",
+    "skg" = "Skagit River Basin"
+)
 
-stations <- list(
+
+# Stations contains information about known monitoring stations
+ace_stations <- list(
     "BBLW" = ace_station(
         name = "Ballard Bridge",
         code = "BBLW",
@@ -109,5 +122,5 @@ stations <- list(
     )
 )
 
-devtools::use_data(stations, internal = TRUE, overwrite = TRUE)
-rm(stations)
+devtools::use_data(ace_projects, ace_stations, internal = TRUE, overwrite = TRUE)
+rm(ace_projects, ace_stations)

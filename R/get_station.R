@@ -11,9 +11,9 @@
 #' s <- get_station(code = "FBLW")
 #'
 get_station <- function(code, ...) {
-    if (!toupper(code) %in% names(stations)) {
+    if (!toupper(code) %in% names(ace_stations)) {
         stop(sprintf("Station '%s' is not known", code), call. = FALSE)
     }
 
-    stations[[toupper(code)]]
+    ace_stations[[toupper(code)]]
 }

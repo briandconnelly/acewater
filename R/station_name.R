@@ -8,5 +8,5 @@
 #' station_name("FBLW")
 #'
 station_name <- function(code) {
-    purrr::map_chr(code, function(x) stations[[x]]$name)
+    purrr::map_chr(code, function(x) ace_stations[[x]]$name)
 }
