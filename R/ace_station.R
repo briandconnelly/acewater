@@ -7,6 +7,7 @@
 #' @param code Water monitoring station code (e.g. "FBLW")
 #' @param data_columns Vector of names of columns in the data
 #' @param depths Vector of depths, in feet, for the station's measurements
+#' @param data_skiprows Number of rows to skip at the beginning of data file
 #' @param url Station data url. By default, one will be created using the
 #' standard url scheme and the monitoring station code.
 #'
@@ -18,16 +19,18 @@
 #'     name = "Fremont Bridge",
 #'     code = "FBLW",
 #'     data_columns = c("Time", "SaltA", "SaltB", "SaltC", "TempA", "TempB", "TempC"),
-#'     depths = c("A" = 18, "B" = 31, "C" = 40)
+#'     depths = c("A" = 18, "B" = 31, "C" = 40),
+#'     data_skiprows = 5
 #' )
 #'
-ace_station <- function(name, code, data_columns, depths = c(), url = NULL) {
+ace_station <- function(name, code, data_columns, depths = c(), data_skiprows, url = NULL) {
     x <- structure(
         list(
             name = name,
             code = code,
             data_columns = data_columns,
             depths = depths,
+            data_skiprows = data_skiprows,
             url = ifelse(
                 is.null(url),
                 sprintf(

@@ -20,11 +20,10 @@ get_water_conditions <- function(station, na.rm = FALSE, ...) {
 #' @rdname get_water_conditions
 #' @export
 get_water_conditions.ace_station <- function(station, na.rm = FALSE, ...) {
-    measures <- c("Salt" = "Salinity", "Temp" = "Temperature")
 
     z <- readr::read_lines(
         file = station$url,
-        skip = 5
+        skip = station$data_skiprows,
     ) %>%
         utils::head(n = -2L) %>%
         stringi::stri_split_regex(pattern = "\\s{2,}", simplify = TRUE) %>%
@@ -44,9 +43,18 @@ get_water_conditions.ace_station <- function(station, na.rm = FALSE, ...) {
             )
         ) %>%
         dplyr::mutate(
-            Depth = station$depths[stringi::stri_sub(Field, -1)],
+            Station = forcats::as_factor(Station),
+            Depth = ifelse(
+                stringi::stri_sub(Field, -1) %in% LETTERS,
+                station$depths[stringi::stri_sub(Field, -1)],
+                as.numeric(NA)
+            ),
             Measure = forcats::as_factor(
-                measures[stringi::stri_sub(Field, 1, 4)]
+                ifelse(
+                    stringi::stri_sub(Field, -1) %in% LETTERS,
+                    stringi::stri_sub(Field, from = 1L, to = -2L),
+                    Field
+                )
             )
         ) %>%
         dplyr::select_("Time", "Station", "Depth", "Measure", "Value")

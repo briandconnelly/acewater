@@ -4,7 +4,8 @@
 \alias{ace_station}
 \title{Create Objects Representing Water Monitoring Stations}
 \usage{
-ace_station(name, code, data_columns, depths = c(), url = NULL)
+ace_station(name, code, data_columns, depths = c(), data_skiprows,
+  url = NULL)
 }
 \arguments{
 \item{name}{The name of the station (e.g. "Fremont Bridge)}
@@ -14,6 +15,8 @@ ace_station(name, code, data_columns, depths = c(), url = NULL)
 \item{data_columns}{Vector of names of columns in the data}
 
 \item{depths}{Vector of depths, in feet, for the station's measurements}
+
+\item{data_skiprows}{Number of rows to skip at the beginning of data file}
 
 \item{url}{Station data url. By default, one will be created using the
 standard url scheme and the monitoring station code.}
@@ -30,7 +33,8 @@ my_station <- ace_station(
     name = "Fremont Bridge",
     code = "FBLW",
     data_columns = c("Time", "SaltA", "SaltB", "SaltC", "TempA", "TempB", "TempC"),
-    depths = c("A" = 18, "B" = 31, "C" = 40)
+    depths = c("A" = 18, "B" = 31, "C" = 40),
+    data_skiprows = 5
 )
 
 }

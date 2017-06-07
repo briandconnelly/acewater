@@ -1,3 +1,12 @@
+# acewater 0.3.0 (2017-06-07)
+
+* Now works with all stations in the Lake Washington Ship Canal
+* `get_water_conditions` can now work with more types of measurements (just using the data_columns names)
+* `get_water_conditions` now returns Station code as a factor
+* Added more stations to stations data set: BTHS, FISH2, KNMR, RNTW
+* Added `data_skiprows` attribute to `ace_station` to specify number of rows to skip at the beginning of the file
+
+
 # acewater 0.2.1 (2017-06-07)
 
 * Added `ace_station` constructor
