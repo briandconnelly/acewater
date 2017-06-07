@@ -2,12 +2,18 @@
 % Please edit documentation in R/get_water_conditions.R
 \name{get_water_conditions}
 \alias{get_water_conditions}
+\alias{get_water_conditions.ace_station}
+\alias{get_water_conditions.character}
 \title{Get Water Conditions for a Monitoring Station}
 \usage{
 get_water_conditions(station, na.rm = FALSE, ...)
+
+\method{get_water_conditions}{ace_station}(station, na.rm = FALSE, ...)
+
+\method{get_water_conditions}{character}(station, na.rm = FALSE, ...)
 }
 \arguments{
-\item{station}{Water monitoring station code (e.g. "FBLW")}
+\item{station}{Water monitoring station specified as a code (e.g. "FBLW") or as an \code{ace_water} object (e.g. from \code{get_station("FBLW")})}
 
 \item{na.rm}{A logical value indicating whether \code{NA} values should be removed from the results (default: \code{FALSE})}
 

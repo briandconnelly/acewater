@@ -1,6 +1,6 @@
 #' Get Water Conditions for a Monitoring Station
 #'
-#' @param station Water monitoring station code (e.g. "FBLW")
+#' @param station Water monitoring station specified as a code (e.g. "FBLW") or as an \code{ace_water} object (e.g. from \code{get_station("FBLW")})
 #' @param na.rm A logical value indicating whether \code{NA} values should be removed from the results (default: \code{FALSE})
 #' @param ... Additional arguments (not supported)
 #'
@@ -13,28 +13,24 @@
 #' get_water_conditions(station = "FBLW")
 #'
 get_water_conditions <- function(station, na.rm = FALSE, ...) {
+    UseMethod("get_water_conditions")
+}
+
+
+#' @rdname get_water_conditions
+#' @export
+get_water_conditions.ace_station <- function(station, na.rm = FALSE, ...) {
     measures <- c("Salt" = "Salinity", "Temp" = "Temperature")
 
-    station <- get_station(code = station)
-
-    station_url <- ifelse(
-        "url" %in% names(station),
-        station$url,
-        sprintf(
-            "http://www.nwd-wc.usace.army.mil/nws/hh/textdata/lkw_%s.prn",
-            tolower(station$code)
-        )
-    )
-
     z <- readr::read_lines(
-        file = station_url,
+        file = station$url,
         skip = 5
     ) %>%
         utils::head(n = -2L) %>%
         stringi::stri_split_regex(pattern = "\\s{2,}", simplify = TRUE) %>%
         tibble::as_tibble()
 
-    names(z) <- station$columns
+    names(z) <- station$data_columns
 
     z <- z %>%
         dplyr::mutate(
@@ -53,9 +49,16 @@ get_water_conditions <- function(station, na.rm = FALSE, ...) {
                 measures[stringi::stri_sub(Field, 1, 4)]
             )
         ) %>%
-        dplyr::select(Time, Station, Depth, Measure, Value)
+        dplyr::select_("Time", "Station", "Depth", "Measure", "Value")
 
     if (na.rm) z %<>% stats::na.omit()
 
     z
+}
+
+
+#' @rdname get_water_conditions
+#' @export
+get_water_conditions.character <- function(station, na.rm = FALSE, ...) {
+    get_water_conditions(get_station(station))
 }

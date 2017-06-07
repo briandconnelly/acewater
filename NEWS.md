@@ -1,4 +1,13 @@
-# acewater 0.2.0
+# acewater NEXT
+
+* Added `ace_station` constructor
+    * stations data is now a list of ace_station objects
+    * `get_station` now returns object from station data, no longer constructing an object itself
+    * `get_water_conditions` now works with `ace_station` objects
+* `get_water_conditions` now a generic function
+    * Supports for specifying station as character vector (e.g. "FBLW") or `ace_station` object
+
+# acewater 0.2.0 (2017-06-07)
 
 * get_water_conditions now takes station code instead of station object
 * Station data now includes information about columns in result, which will make it easy to accomodate more station data formats

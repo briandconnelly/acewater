@@ -15,8 +15,5 @@ get_station <- function(code, ...) {
         stop(sprintf("Station '%s' is not known", code), call. = FALSE)
     }
 
-    structure(
-        stations[[toupper(code)]],
-        class = "ace_station"
-    )
+    stations[[toupper(code)]]
 }
