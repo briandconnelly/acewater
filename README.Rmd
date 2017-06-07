@@ -30,14 +30,23 @@ devtools::install_github("briandconnelly/acewater")
 
 ## Example
 
-### Get the most recent conditions at the Fremont Bridge (station FBLW)
+### Get the most recent conditions at the [Fremont Bridge](https://en.wikipedia.org/wiki/Fremont_Bridge_(Seattle)) (station FBLW)
 
 ```{r example}
 library(acewater)
-library(magrittr)
 
 get_water_conditions("FBLW")
 ```
+
+### Get Conditions from Multiple Stations
+
+We can use [purrr](http://purrr.tidyverse.org) to combine data from multiple stations into a tidy data frame:
+
+```{r Example: Multiple Stations, message=FALSE}
+purrr::map_df(c("UBLW", "FBLW", "LLLW"), get_water_conditions)
+
+```
+
 
 ## Contributer Code of Conduct
 

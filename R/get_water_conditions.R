@@ -1,7 +1,7 @@
 #' Get Water Conditions for a Monitoring Station
 #'
-#' @param station Water monitoring station code (e.g. "FBLW").
-#' @param na.rm A logical value indicating whether \code{NA} values should be removed from the results (default: \code{FALSE}).
+#' @param station Water monitoring station code (e.g. "FBLW")
+#' @param na.rm A logical value indicating whether \code{NA} values should be removed from the results (default: \code{FALSE})
 #' @param ... Additional arguments (not supported)
 #'
 #' @return A tibble
@@ -10,18 +10,20 @@
 #'
 #' @examples
 #' library(acewater)
-#' get_water_conditions(station = "FBLW)
+#' get_water_conditions(station = "FBLW")
 #'
 get_water_conditions <- function(station, na.rm = FALSE, ...) {
-    measurements <- c("Salt" = "Salinity", "Temp" = "Temperature")
+    measures <- c("Salt" = "Salinity", "Temp" = "Temperature")
 
     station <- get_station(code = station)
 
     station_url <- ifelse(
         "url" %in% names(station),
         station$url,
-        sprintf("http://www.nwd-wc.usace.army.mil/nws/hh/textdata/lkw_%s.prn", tolower(station$code))
-        #sprintf("testdata/lkw_%s.prn", tolower(station$code))
+        sprintf(
+            "http://www.nwd-wc.usace.army.mil/nws/hh/textdata/lkw_%s.prn",
+            tolower(station$code)
+        )
     )
 
     z <- readr::read_lines(
@@ -47,9 +49,11 @@ get_water_conditions <- function(station, na.rm = FALSE, ...) {
         ) %>%
         dplyr::mutate(
             Depth = station$depths[stringi::stri_sub(Field, -1)],
-            Measurement = forcats::as_factor(measurements[stringi::stri_sub(Field, 1, 4)])
+            Measure = forcats::as_factor(
+                measures[stringi::stri_sub(Field, 1, 4)]
+            )
         ) %>%
-        dplyr::select(Time, Station, Depth, Measurement, Value)
+        dplyr::select(Time, Station, Depth, Measure, Value)
 
     if (na.rm) z %<>% stats::na.omit()
 

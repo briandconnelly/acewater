@@ -7,9 +7,9 @@
 get_water_conditions(station, na.rm = FALSE, ...)
 }
 \arguments{
-\item{station}{Water monitoring station code (e.g. "FBLW").}
+\item{station}{Water monitoring station code (e.g. "FBLW")}
 
-\item{na.rm}{A logical value indicating whether \code{NA} values should be removed from the results (default: \code{FALSE}).}
+\item{na.rm}{A logical value indicating whether \code{NA} values should be removed from the results (default: \code{FALSE})}
 
 \item{...}{Additional arguments (not supported)}
 }
@@ -18,4 +18,9 @@ A tibble
 }
 \description{
 Get Water Conditions for a Monitoring Station
+}
+\examples{
+library(acewater)
+get_water_conditions(station = "FBLW")
+
 }
