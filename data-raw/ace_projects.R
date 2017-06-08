@@ -695,7 +695,7 @@ ace_projects <- list(
                 data_skiprows = 6
             ),
             "BTHS" = ace_station(
-                name = "Locks Boathouse",
+                name = "Lake Washington Ship Canal Elevation at Locks Boathouse",
                 code = "BTHS",
                 project = "LKW",
                 data_columns = c("Time",
@@ -705,7 +705,7 @@ ace_projects <- list(
                 data_skiprows = 6
             ),
             "KNMR" = ace_station(
-                name = "Kenmore Gage",
+                name = "Elevation at Kenmore Gage",
                 code = "KNMR",
                 project = "LKW",
                 data_columns = c("Time",
@@ -730,7 +730,129 @@ ace_projects <- list(
     "PND" = ace_project(
         name = "Pend Oreille River Basin",
         code = "PND",
-        stations = list()
+        stations = list(
+            "ALF" = ace_station(
+                name = "Albeni Falls on Lake Pend Oreille",
+                code = "ALF",
+                project = "PND",
+                data_columns = c("Time", "ElevForebay", "FlowResOut"),
+                data_units = c("", "ft", "cfs"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            "BOX" = ace_station(
+                name = "Box Canyon",
+                code = "BOX",
+                project = "PND",
+                data_columns = c("Time", "ElevForebay", "Discharge"),
+                data_units = c("", "ft", "cfs"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            "CAB" = ace_station(
+                name = "Cabinet Gorge",
+                code = "CAB",
+                project = "PND",
+                data_columns = c("Time", "ElevForebay", "Discharge"),
+                data_units = c("", "ft", "cfs"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            "HOPI" = ace_station(
+                name = "Pend Oreille Lake at Hope",
+                code = "HOPI",
+                project = "PND",
+                data_columns = c("Time", "LakeElevation", "Manometer", "BYVILakeElevation"),
+                data_units = c("", "ft", "ft", "ft"),
+                depths = c(),
+                data_skiprows = 6
+            ),
+            "ALFW" = ace_station(
+                name = "Hope Wind Gages on Lake Pend Oreille",
+                code = "ALFW",
+                project = "PND",
+                data_columns = c("Time", "Direction", "Speed"),
+                data_units = c("", "deg", "mph"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            "NOX" = ace_station(
+                name = "Noxon Rapids",
+                code = "NOX",
+                project = "PND",
+                data_columns = c("Time", "ElevForebay", "Discharge"),
+                data_units = c("", "ft", "cfs"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            "RCRI" = ace_station(
+                name = "Riley Creek at Laclede",
+                code = "RCRI",
+                project = "PND",
+                data_columns = c("Time", "AirTemperature", "WaterTemperature", "Depth"),
+                data_units = c("", "F", "F", "ft"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            # TODO: problems parsing this one
+            "RCRIAFDD" = ace_station(
+                name = "Riley Creek Air Temperature",
+                code = "RCRIAFDD",
+                project = "PND",
+                data_columns = c("Time", "DailyAverage", "FDD", "AFDD"),
+                data_units = c("", "F", "F", "F"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            # TODO: problems parsing this one
+            "SAPI" = ace_station(
+                name = "Windbag Marina at Sandpoint",
+                code = "SAPI",
+                project = "PND",
+                data_columns = c("Time", "AirTemperature", "WaterTemperature", "PrecipitationInc", "PrecipitationCum", "Depth", "WindDirection"),
+                data_units = c("", "F", "F", "in", "in", "ft", "deg"),
+                depths = c(),
+                data_skiprows = 6
+            ),
+            # TODO: problems parsing this one
+            "SAPIAFDD" = ace_station(
+                name = "Windbag Marina at Sandpoint Air Temperatures",
+                code = "SAPIAFDD",
+                project = "PND",
+                data_columns = c("Time", "DailyAverage", "FDD", "AFDD"),
+                data_units = c("", "F", "F", "F"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            "CUIW" = ace_station(
+                name = "Riverview Bible Camp above Cusick",
+                code = "CUIW",
+                project = "PND",
+                data_columns = c("Time", "AirTemperature", "WaterTemperature", "Depth"),
+                data_units = c("", "F", "F", "ft"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            # TODO: not parsing properly
+            "CUIWAFDD" = ace_station(
+                name = "Riverview Bible Camp Air Temperatures",
+                code = "CUIWAFDD",
+                project = "PND",
+                data_columns = c("Time", "DailyAverage", "FDD", "AFDD"),
+                data_units = c("", "F", "F", "F"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            "TOM" = ace_station(
+                name = "Thompson Falls",
+                code = "TOM",
+                project = "PND",
+                data_columns = c("Time", "Flow"),
+                data_units = c("", "cfs"),
+                depths = c(),
+                data_skiprows = 5
+            )
+        )
     ),
     "PUY" = ace_project(
         name = "Puyallup River Basin",

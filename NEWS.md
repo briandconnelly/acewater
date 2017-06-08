@@ -16,7 +16,7 @@
     * Removed `ace_stations` (after renaming it from stations)
     * File moved to `ace_projects`
 * Updated examples in README to include project codes
-* Added stations for Chehalis River Basin, Eastern Washington Rivers, Flathead and Clark Fork Rivers, Green River Basin, Kootenai River Basin
+* Added stations for Chehalis River Basin, Eastern Washington Rivers, Flathead and Clark Fork Rivers, Green River Basin, Kootenai River Basin, Pend Oreille River Basin,
 
 
 # acewater 0.3.0 (2017-06-07)
