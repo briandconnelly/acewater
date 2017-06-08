@@ -486,7 +486,116 @@ ace_projects <- list(
     "KOT" = ace_project(
         name = "Kootenai River Basin",
         code = "KOT",
-        stations = list()
+        stations = list(
+            "BFEI" = ace_station(
+                name = "Kootenai River near Bonners Ferry",
+                code = "BFEI",
+                project = "KOT",
+                data_columns = c("Time", "Stage", "Flow", "FlowLoc", "Temperature"),
+                data_units = c("", "ft", "cfs", "cfs", "F"),
+                depths = c(),
+                data_skiprows = 6
+            ),
+            "EASI" = ace_station(
+                name = "Moyie River at Eastport",
+                code = "EASI",
+                project = "KOT",
+                data_columns = c("Time", "Stage", "Flow"),
+                data_units = c("", "ft", "cfs"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            "KRMI" = ace_station(
+                name = "Kootenai River Below Moyie River Near Bonners Ferry",
+                code = "KRMI",
+                project = "KOT",
+                data_columns = c("Time", "Stage", "Flow"),
+                data_units = c("", "ft", "cfs"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            "FISM" = ace_station(
+                name = "Fisher River near Libby",
+                code = "FISM",
+                project = "KOT",
+                data_columns = c("Time", "Stage", "Flow"),
+                data_units = c("", "ft", "cfs"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            "FSTB" = ace_station(
+                name = "Kootenay River at Fort Steele",
+                code = "FSTB",
+                project = "KOT",
+                data_columns = c("Time", "Stage", "Flow"),
+                data_units = c("", "ft", "cfs"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            "LEOI" = ace_station(
+                name = "Kootenai River near Leonia",
+                code = "LEOI",
+                project = "KOT",
+                data_columns = c("Time", "Stage", "Flow", "Temperature"),
+                data_units = c("", "ft", "cfs", "F"),
+                depths = c(),
+                data_skiprows = 6
+            ),
+            "LIB" = ace_station(
+                name = "Libby Dam",
+                code = "LIB",
+                project = "KOT",
+                data_columns = c("Time", "ElevForebay", "Inflow", "Outflow", "Precipitation"),
+                data_units = c("", "ft", "cfs", "cfs", "in"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            "LIBM" = ace_station(
+                name = "Libby Downstream",
+                code = "LIBM",
+                project = "KOT",
+                data_columns = c("Time", "Stage", "Flow", "Temperature"),
+                data_units = c("", "ft", "cfs", "F"),
+                depths = c(),
+                data_skiprows = 6
+            ),
+            "SSLB" = ace_station(
+                name = "Kootenay River at Nelson",
+                code = "SSLB",
+                project = "KOT",
+                data_columns = c("Time", "Elevation"),
+                data_units = c("", "ft"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            "QBYB" = ace_station(
+                name = "Kootenay Lake at Queens Bay",
+                code = "QBYB",
+                project = "KOT",
+                data_columns = c("Time", "Elevation", "Inflow", "Outflow"),
+                data_units = c("", "ft", "cfs", "cfs"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            "TRYM" = ace_station(
+                name = "Yaak River near Troy",
+                code = "TRYM",
+                project = "KOT",
+                data_columns = c("Time", "Stage", "Flow"),
+                data_units = c("", "ft", "cfs"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            "LBTM1" = ace_station(
+                name = "Libby Dam Forebay Water Temperature Profile",
+                code = "LBTM1",
+                project = "KOT",
+                data_columns = c("Time", "TemperatureA", "TemperatureB", "TemperatureC", "TemperatureD", "TemperatureE", "TemperatureF"),
+                data_units = c("", "F", "F", "F", "F", "F", "F"),
+                depths = c("A" = 2170, "B" = 2225, "C" = 2275, "D" = 2300, "E" = 2310, "F" = 2320),
+                data_skiprows = 4
+            )
+        )
     ),
     "LKW" = ace_project(
         name = "Lake Washington",
