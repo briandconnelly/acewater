@@ -1029,7 +1029,163 @@ ace_projects <- list(
     "SKG" = ace_project(
         name = "Skagit River Basin",
         code = "SKG",
-        stations = list()
+        stations = list(
+            "SHA" = ace_station(
+                name = "Lake Shannon (Lower Baker)",
+                code = "SHA",
+                project = "SKG",
+                data_columns = c("Time", "ElevForebay", "Stage", "Flow"),
+                data_units = c("", "ft", "ft", "cfs"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            "UBK" = ace_station(
+                name = "Upper Baker Lake",
+                code = "UBK",
+                project = "SKG",
+                data_columns = c("Time", "ElevForebay", "PrecipitationInc"),
+                data_units = c("", "ft", "in"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            "CONW" = ace_station(
+                name = "Skagit River near Concrete",
+                code = "CONW",
+                project = "SKG",
+                data_columns = c("Time", "Stage", "Flow"),
+                data_units = c("", "ft", "cfs"),
+                depths = c(),
+                data_skiprows = 6
+            ),
+            "DIA" = ace_station(
+                name = "Diablo Dam Lake",
+                code = "DIA",
+                project = "SKG",
+                data_columns = c("Time", "ElevForebay", "Inflow", "Outflow"),
+                data_units = c("", "ft", "cfs", "cfs"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            "SRMW" = ace_station(
+                name = "Skagit River above Marblemount",
+                code = "SRMW",
+                project = "SKG",
+                data_columns = c("Time", "Stage", "Flow", "Precipitation"),
+                data_units = c("", "ft", "cfs"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            "MVEW" = ace_station(
+                name = "Skagi River near Mount Vernon",
+                code = "MVEW",
+                project = "SKG",
+                data_columns = c("Time", "Stage", "Flow"),
+                data_units = c("", "ft", "cfs"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            "GORW" = ace_station(
+                name = "Skagit River at Newhalem",
+                code = "GORW",
+                project = "SKG",
+                data_columns = c("Time", "Stage", "Flow"),
+                data_units = c("", "ft", "cfs"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            "ROCW" = ace_station(
+                name = "Skagit River near Rockport",
+                code = "ROCW",
+                project = "SKG",
+                data_columns = c("Time", "Stage", "Flow"),
+                data_units = c("", "ft", "cfs"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            "ROS" = ace_station(
+                name = "Ross Lake",
+                code = "ROS",
+                project = "SKG",
+                data_columns = c("Time", "ElevForebay", "Inflow", "Outflow"),
+                data_units = c("", "ft", "cfs", "cfs"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            "SAKW" = ace_station(
+                name = "Sauk River near Sauk",
+                code = "SAKW",
+                project = "SKG",
+                data_columns = c("Time", "Stage", "Flow"),
+                data_units = c("", "ft", "cfs"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            "WCHW" = ace_station(
+                name = "Sauk River above Whitechuck River",
+                code = "WCHW",
+                project = "SKG",
+                data_columns = c("Time", "Stage", "Flow", "Precipitation"),
+                data_units = c("", "ft", "cfs", "in"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            "CSCW" = ace_station(
+                name = "Cascade River at Marblemount",
+                code = "CSCW",
+                project = "SKG",
+                data_columns = c("Time", "Stage", "Flow"),
+                data_units = c("", "ft", "cfs"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            "BABW" = ace_station(
+                name = "Baker River above Blum Creek",
+                code = "BABW",
+                project = "SKG",
+                data_columns = c("Time", "Stage", "Flow"),
+                data_units = c("", "ft", "cfs"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            "SUIW" = ace_station(
+                name = "Suiattle River near Darrington",
+                code = "SUIW",
+                project = "SKG",
+                data_columns = c("Time", "Stage", "Flow"),
+                data_units = c("", "ft", "cfs"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            "THNW" = ace_station(
+                name = "Thunder Creek near Newhalem",
+                code = "THNW",
+                project = "SKG",
+                data_columns = c("Time", "Stage", "Flow"),
+                data_units = c("", "ft", "cfs"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            # TODO: not parsing
+            "PREC4" = ace_station(
+                name = "Skagit River Basin Precipitation",
+                code = "PREC4",
+                project = "SKG",
+                data_columns = c("Time", "PrecipitationDAR", "PrecipitationMAR"),
+                data_units = c("", "in", "in"),
+                depths = c(),
+                data_skiprows = 4
+            ),
+            # TODO: not parsing
+            "SUM4" = ace_station(
+                name = "Skagit River Basin Summary",
+                code = "SUM4",
+                project = "SKG",
+                data_columns = c("Time", "ElevForebayUBK", "ElevForebayROS", "FlowMVEW", "FlowCONW", "PrecipitationIncDAR", "PrecipitationIncMAR"),
+                data_units = c("", "ft", "ft", "cfs", "cfs", "in", "in"),
+                depths = c(),
+                data_skiprows = 7
+            )
+        )
     )
 )
 
