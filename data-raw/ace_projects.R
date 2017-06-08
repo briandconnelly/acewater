@@ -857,7 +857,174 @@ ace_projects <- list(
     "PUY" = ace_project(
         name = "Puyallup River Basin",
         code = "PUY",
-        stations = list()
+        stations = list(
+            "ALDW" = ace_station(
+                name = "Puyallup River at Alderton",
+                code = "ALDW",
+                project = "PUY",
+                data_columns = c("Time", "Stage", "Flow"),
+                data_units = c("", "ft", "cfs"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            "WARW" = ace_station(
+                name = "White River at 'R' Street near Auburn and White River Near Auburn",
+                code = "WARW",
+                project = "PUY",
+                data_columns = c("Time", "WARWStage", "WARWFlow", "WABWStage"),
+                data_units = c("", "ft", "cfs", "ft"),
+                depths = c(),
+                data_skiprows = 6
+            ),
+            "BOSW" = ace_station(
+                name = "Boise Creek at Buckley",
+                code = "BOSW",
+                project = "PUY",
+                data_columns = c("Time", "Stage", "Flow"),
+                data_units = c("", "ft", "cfs"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            "WBCW" = ace_station(
+                name = "White River above Boise Creek at Buckley",
+                code = "WBCW",
+                project = "PUY",
+                data_columns = c("Time", "Stage", "Flow"),
+                data_units = c("", "ft", "cfs"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            "MMDW" = ace_station(
+                name = "White River near Buckley",
+                code = "MMDW",
+                project = "PUY",
+                data_columns = c("Time", "Stage"),
+                data_units = c("", "ft"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            "LTDW" = ace_station(
+                name = "Lake Tapps Diversion near Dieringer",
+                code = "LTDW",
+                project = "PUY",
+                data_columns = c("Time", "Stage", "Flow"),
+                data_units = c("", "ft", "cfs"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            "ELEW" = ace_station(
+                name = "Puyallup River near Electron",
+                code = "ELEW",
+                project = "PUY",
+                data_columns = c("Time", "Stage", "Flow"),
+                data_units = c("", "ft", "cfs"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            "FFXW" = ace_station(
+                name = "Carbon River at Fairfax",
+                code = "FFXW",
+                project = "PUY",
+                data_columns = c("Time", "Stage", "Flow", "PrecipitationCum", "PrecipitationInc", "Temperature"),
+                data_units = c("", "ft", "cfs", "in", "in", "F"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            "GEEW" = ace_station(
+                name = "Greenwater River at Greenwater",
+                code = "GEEW",
+                project = "PUY",
+                data_columns = c("Time", "Stage", "Flow", "Precipitation", "Temperature"),
+                data_units = c("", "ft", "cfs", "in", "F"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            "TAP" = ace_station(
+                name = "Lake Tapps",
+                code = "TAP",
+                project = "PUY",
+                data_columns = c("Time", "ElevForebay"),
+                data_units = c("", "ft"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            # TODO: not parsing properly
+            "MMD" = ace_station(
+                name = "Mud Mountain Dam",
+                code = "MMD",
+                project = "PUY",
+                data_columns = c("Time", "ElevForebay", "Intake", "Storage", "Inflow", "Outflow", "Precipitation"),
+                data_units = c("", "ft", "ft", "ac-ft", "cfs", "cfs", "in"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            "ORTW" = ace_station(
+                name = "Puyallup River near Ortling",
+                code = "ORTW",
+                project = "PUY",
+                data_columns = c("Time", "Stage", "Flow"),
+                data_units = c("", "ft", "cfs"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            "PUYW" = ace_station(
+                name = "Puyallup River at Puyallup",
+                code = "PUYW",
+                project = "PUY",
+                data_columns = c("Time", "Stage", "Flow"),
+                data_units = c("", "ft", "cfs"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            "SPEW" = ace_station(
+                name = "South Prairie Creek at South Prairie",
+                code = "SPEW",
+                project = "PUY",
+                data_columns = c("Time", "Stage", "Flow", "Precipitation"),
+                data_units = c("", "ft", "cfs", "in"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            # TODO: test this
+            "MMIW" = ace_station(
+                name = "White River below Clearwater River",
+                code = "MMIW",
+                project = "PUY",
+                data_columns = c("Time", "Stage", "Flow"),
+                data_units = c("", "ft", "cfs"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            "WPCW" = ace_station(
+                name = "White River at Pacific",
+                code = "WPCW",
+                project = "PUY",
+                data_columns = c("Time", "Stage"),
+                data_units = c("", "ft"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            # TODO: not parsing
+            "PREC2" = ace_station(
+                name = "Puyallup River Basin Precipitation",
+                code = "PREC2",
+                project = "PUY",
+                data_columns = c("Time", "PrecipitationFFXW", "PrecipitationSPEW", "PrecipitationGEEW", "PrecipitationENUW"),
+                data_units = c("", "in", "in", "in", "in"),
+                depths = c(),
+                data_skiprows = 4
+            ),
+            # TODO: not parsing
+            "SUM2" = ace_station(
+                name = "Puyallup River Summary",
+                code = "SUM2",
+                project = "PUY",
+                data_columns = c("Time", "ElevForebayMMD", "FlowPUYW", "IncrENUW", "TemperatureENUW"),
+                data_units = c("", "ft", "cfs", "in", "F"),
+                depths = c(),
+                data_skiprows = 7
+            )
+        )
     ),
     "SKG" = ace_project(
         name = "Skagit River Basin",
