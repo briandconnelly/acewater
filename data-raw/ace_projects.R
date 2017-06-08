@@ -417,7 +417,71 @@ ace_projects <- list(
     "GRN" = ace_project(
         name = "Green River Basin",
         code = "GRN",
-        stations = list()
+        stations = list(
+            "AUBW" = ace_station(
+                name = "Green River Near Auburn",
+                code = "AUBW",
+                project = "GRN",
+                data_columns = c("Time", "Stage", "Flow", "Temperature"),
+                data_units = c("", "ft", "cfs", "F"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            "HAH" = ace_station(
+                name = "Howard Hanson Dam",
+                code = "HAH",
+                project = "GRN",
+                data_columns = c("Time", "ElevForebay", "Storage", "Stage", "Discharge", "Inflow", "Precipitation", "Incr", "Temperature"),
+                data_units = c("", "ft", "ac-ft", "ft", "cfs", "cfs", "in", "in", "F"),
+                depths = c(),
+                data_skiprows = 6
+            ),
+            "HAHW" = ace_station(
+                name = "Howard Hanson Dam Tailwater",
+                code = "HAHW",
+                project = "GRN",
+                data_columns = c("Time", "Stage", "Flow", "Temperature"),
+                data_units = c("", "ft", "cfs", "F"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            "LTCW" = ace_station(
+                name = "Green River near Lester",
+                code = "LTCW",
+                project = "GRN",
+                data_columns = c("Time", "Stage", "Precipitation", "Temperature"),
+                data_units = c("", "ft", "in", "F"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            "BKDW" = ace_station(
+                name = "Newaukum Creek near Black Diamond",
+                code = "BKDW",
+                project = "GRN",
+                data_columns = c("Time", "Stage", "Flow"),
+                data_units = c("", "ft", "cfs"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            "GPUW" = ace_station(
+                name = "Green River near Palmer",
+                code = "GPUW",
+                project = "GRN",
+                data_columns = c("Time", "Stage", "Flow"),
+                data_units = c("", "ft", "cfs"),
+                depths = c(),
+                data_skiprows = 5
+            ),
+            "SOOW" = ace_station(
+                name = "Big Soos Creek",
+                code = "SOOW",
+                project = "GRN",
+                data_columns = c("Time", "Stage", "Flow"),
+                data_units = c("", "ft", "cfs"),
+                depths = c(),
+                data_skiprows = 5
+            )
+        )
     ),
     "KOT" = ace_project(
         name = "Kootenai River Basin",
