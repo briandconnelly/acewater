@@ -11,11 +11,11 @@
 #' find_project("FBLW")
 #'
 find_project <- function(station) {
-    pcode <- NULL
+    pcode <- c()
 
     for (project in ace_projects) {
         if (toupper(station) %in% names(project$stations)) {
-            pcode <- project$code
+            pcode <- append(pcode, project$code)
         }
     }
     pcode

@@ -10,8 +10,11 @@
 #' @param data_units Vector of units corresponding to each entry in data_columns
 #' @param depths Vector of depths, in feet, for the station's measurements
 #' @param data_skiprows Number of rows to skip at the beginning of data file
-#' @param url Station data url. By default, one will be created using the
+#' @param data_url Station data url. By default, one will be created using the
 #' standard url scheme and the monitoring station code.
+#' @param latitude Station's latitude
+#' @param longitude Station's longitude
+#' @param web_url URL providing information about the station
 #'
 #' @return An \code{ace_station} object
 #' @export
@@ -32,7 +35,10 @@ ace_station <- function(name,
                         data_units = c(),
                         depths = c(),
                         data_skiprows,
-                        url = NULL) {
+                        data_url = NULL,
+                        latitude = NULL,
+                        longitude = NULL,
+                        web_url = NULL) {
     x <- structure(
         list(
             name = name,
@@ -42,15 +48,18 @@ ace_station <- function(name,
             data_units = data_units,
             depths = depths,
             data_skiprows = data_skiprows,
-            url = ifelse(
-                is.null(url),
+            data_url = ifelse(
+                is.null(data_url),
                 sprintf(
                     "http://www.nwd-wc.usace.army.mil/nws/hh/textdata/%s_%s.prn",
                     tolower(project),
                     tolower(code)
                 ),
-                url
-            )
+                data_url
+            ),
+            latitude = latitude,
+            longitude = longitude,
+            web_url = web_url
         ),
         class = "ace_station"
     )

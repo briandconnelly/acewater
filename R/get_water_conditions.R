@@ -22,7 +22,7 @@ get_water_conditions <- function(station, na.rm = FALSE, ...) {
 get_water_conditions.ace_station <- function(station, na.rm = FALSE, ...) {
 
     z <- readr::read_lines(
-        file = station$url,
+        file = station$data_url,
         skip = station$data_skiprows,
     ) %>%
         utils::head(n = -2L) %>%

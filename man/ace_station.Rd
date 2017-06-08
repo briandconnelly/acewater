@@ -5,7 +5,8 @@
 \title{Create Object Representing a Water Monitoring Station}
 \usage{
 ace_station(name, code, project, data_columns, data_units = c(),
-  depths = c(), data_skiprows, url = NULL)
+  depths = c(), data_skiprows, data_url = NULL, latitude = NULL,
+  longitude = NULL, web_url = NULL)
 }
 \arguments{
 \item{name}{The name of the station (e.g. "Fremont Bridge")}
@@ -22,8 +23,14 @@ ace_station(name, code, project, data_columns, data_units = c(),
 
 \item{data_skiprows}{Number of rows to skip at the beginning of data file}
 
-\item{url}{Station data url. By default, one will be created using the
+\item{data_url}{Station data url. By default, one will be created using the
 standard url scheme and the monitoring station code.}
+
+\item{latitude}{Station's latitude}
+
+\item{longitude}{Station's longitude}
+
+\item{web_url}{URL providing information about the station}
 }
 \value{
 An \code{ace_station} object

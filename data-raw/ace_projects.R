@@ -200,7 +200,7 @@ ace_projects <- list(
                 data_skiprows = 5
             ),
             "GCL" = ace_station(
-                name = "Grand Coulee Dam",
+                name = "Grand Coulee Dam Lake",
                 code = "GCL",
                 project = "EWA",
                 data_columns = c("Time", "ElevForebay", "Inlow", "Outflow"),
