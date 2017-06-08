@@ -17,12 +17,13 @@
 #' )
 #' }
 #'
-ace_project <- function(name, code, stations = list()) {
+ace_project <- function(name, code, stations = list(), web_url = NULL) {
     structure(
         list(
             name = name,
             code = code,
-            stations = stations
+            stations = stations,
+            web_url = web_url
         ),
         class = "ace_project"
     )

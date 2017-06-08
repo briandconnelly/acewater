@@ -985,7 +985,6 @@ ace_projects <- list(
                 depths = c(),
                 data_skiprows = 5
             ),
-            # TODO: test this
             "MMIW" = ace_station(
                 name = "White River below Clearwater River",
                 code = "MMIW",
