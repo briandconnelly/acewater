@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)]()
 
-acewater provides an interface to the [US Army Corps of Engineers' water monitoring data along the Lake Washington Ship Canal](http://www.nwd-wc.usace.army.mil/nws/hh/www/index.html).
+acewater provides an interface to the [US Army Corps of Engineers' Seattle District water monitoring data](http://www.nwd-wc.usace.army.mil/nws/hh/www/index.html).
 The main function, `get_water_conditions` returns a tidy data frame (a [tibble](http://tibble.tidyverse.org)).
 
 ## Installation
@@ -35,15 +35,16 @@ devtools::install_github("briandconnelly/acewater")
 ```{r example}
 library(acewater)
 
-get_water_conditions("FBLW")
+get_water_conditions(project = "LKW", station = "FBLW")
 ```
 
 ### Get Conditions from Multiple Stations
 
-We can use [purrr](http://purrr.tidyverse.org) to combine data from multiple stations into a tidy data frame:
+We can use [purrr](http://purrr.tidyverse.org) to combine data from multiple stations into a tidy data frame.
+Here, we'll get data from a few stations along the [Lake Washington Ship Canal](https://en.wikipedia.org/wiki/Lake_Washington_Ship_Canal).
 
 ```{r Example: Multiple Stations, message=FALSE}
-purrr::map_df(c("UBLW", "FBLW", "LLLW"), get_water_conditions)
+purrr::map_df(c("UBLW", "FBLW", "LLLW"), get_water_conditions, project = "LKW")
 
 ```
 

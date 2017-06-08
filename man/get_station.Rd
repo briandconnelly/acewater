@@ -4,9 +4,11 @@
 \alias{get_station}
 \title{Get Information about a Monitoring Station}
 \usage{
-get_station(code, ...)
+get_station(project, code, ...)
 }
 \arguments{
+\item{project}{Project/basin code (e.g. "LKW")}
+
 \item{code}{Water monitoring station code (e.g. "FBLW")}
 
 \item{...}{Additional arguments (not supported)}
@@ -19,6 +21,6 @@ Get Information about a Monitoring Station
 }
 \examples{
 library(acewater)
-s <- get_station(code = "FBLW")
+s <- get_station(project = "LKW", code = "FBLW")
 
 }

@@ -4,10 +4,10 @@
 \name{acewater-package}
 \alias{acewater}
 \alias{acewater-package}
-\title{acewater: Download Water Conditions for the Lake Washington Ship Canal}
+\title{acewater: Download Water Conditions Waterways in the Seattle Area}
 \description{
 This package returns tidy data from the US Army Corps of Engineers'
-water quality data for the Lake Washington Ship Canal.
+water quality data for the Seattle District.
 }
 \note{
 See \url{http://www.nwd-wc.usace.army.mil/nws/hh/www/index.html}

@@ -1,8 +1,22 @@
 # acewater NEXT
 
+* Updated `ace_station` structure
+    * Added `data_units` field to `ace_station` for measurement units
+    * Added `project` field to `ace_station` to store station's project
+* Added `ace_project` structure for storing projects (each has multiple stations)
+* Added `find_project` function to find the project (code) associated with a given monitoring station
+* `get_station` now takes a project code as argument
+* Updated `get_water_conditions`
+    * `get_water_conditions.character` now takes a project code as argument
+    * Project/basin now included in result tibble
+* Removed `station_name`
 * Internal data updates
-    * Added ace_projects data set, containing information about different basins/projects
-    * Renamed stations as ace_stations
+    * Added values for `data_units` and `project` to existing stations
+    * Added `ace_projects` data set, containing information about different basins/projects
+    * Removed `ace_stations` (after renaming it from stations)
+    * File moved to `ace_projects`
+* Updated examples in README to include project codes
+* Added stations for Chehalis River Basin, Eastern Washington Rivers, Flathead and Clark Fork Rivers, 
 
 
 # acewater 0.3.0 (2017-06-07)

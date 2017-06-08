@@ -2,9 +2,10 @@
 
 S3method(get_water_conditions,ace_station)
 S3method(get_water_conditions,character)
+export(ace_project)
 export(ace_station)
+export(find_project)
 export(get_station)
 export(get_water_conditions)
-export(station_name)
 importFrom(magrittr,"%<>%")
 importFrom(magrittr,"%>%")

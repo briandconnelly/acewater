@@ -43,6 +43,7 @@ get_water_conditions.ace_station <- function(station, na.rm = FALSE, ...) {
             )
         ) %>%
         dplyr::mutate(
+            Project = forcats::as_factor(station$project),
             Station = forcats::as_factor(Station),
             Depth = ifelse(
                 stringi::stri_sub(Field, -1) %in% LETTERS,
@@ -57,7 +58,7 @@ get_water_conditions.ace_station <- function(station, na.rm = FALSE, ...) {
                 )
             )
         ) %>%
-        dplyr::select_("Time", "Station", "Depth", "Measure", "Value")
+        dplyr::select_("Time", "Project", "Station", "Depth", "Measure", "Value")
 
     if (na.rm) z %<>% stats::na.omit()
 
@@ -67,9 +68,9 @@ get_water_conditions.ace_station <- function(station, na.rm = FALSE, ...) {
 
 #' @rdname get_water_conditions
 #' @export
-get_water_conditions.character <- function(station, na.rm = FALSE, ...) {
+get_water_conditions.character <- function(project, station, na.rm = FALSE, ...) {
     if (length(station) > 1) {
         stop("Must supply only one station", call. = FALSE)
     }
-    get_water_conditions(get_station(station))
+    get_water_conditions(get_station(project, station))
 }

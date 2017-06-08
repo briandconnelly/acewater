@@ -1,11 +1,13 @@
-#' Create Objects Representing Water Monitoring Stations
+#' Create Object Representing a Water Monitoring Station
 #'
 #' \code{ace_station} constructs \code{ace_station} objects, which store
 #' information about water monitoring stations
 #'
-#' @param name The name of the station (e.g. "Fremont Bridge)
+#' @param name The name of the station (e.g. "Fremont Bridge")
 #' @param code Water monitoring station code (e.g. "FBLW")
+#' @param project Code for project (e.g. "LKW" for Lake Washington Ship Canal)
 #' @param data_columns Vector of names of columns in the data
+#' @param data_units Vector of units corresponding to each entry in data_columns
 #' @param depths Vector of depths, in feet, for the station's measurements
 #' @param data_skiprows Number of rows to skip at the beginning of data file
 #' @param url Station data url. By default, one will be created using the
@@ -23,18 +25,28 @@
 #'     data_skiprows = 5
 #' )
 #'
-ace_station <- function(name, code, data_columns, depths = c(), data_skiprows, url = NULL) {
+ace_station <- function(name,
+                        code,
+                        project,
+                        data_columns,
+                        data_units = c(),
+                        depths = c(),
+                        data_skiprows,
+                        url = NULL) {
     x <- structure(
         list(
             name = name,
             code = code,
+            project = project,
             data_columns = data_columns,
+            data_units = data_units,
             depths = depths,
             data_skiprows = data_skiprows,
             url = ifelse(
                 is.null(url),
                 sprintf(
-                    "http://www.nwd-wc.usace.army.mil/nws/hh/textdata/lkw_%s.prn",
+                    "http://www.nwd-wc.usace.army.mil/nws/hh/textdata/%s_%s.prn",
+                    tolower(project),
                     tolower(code)
                 ),
                 url

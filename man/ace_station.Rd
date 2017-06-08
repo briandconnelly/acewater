@@ -2,17 +2,21 @@
 % Please edit documentation in R/ace_station.R
 \name{ace_station}
 \alias{ace_station}
-\title{Create Objects Representing Water Monitoring Stations}
+\title{Create Object Representing a Water Monitoring Station}
 \usage{
-ace_station(name, code, data_columns, depths = c(), data_skiprows,
-  url = NULL)
+ace_station(name, code, project, data_columns, data_units = c(),
+  depths = c(), data_skiprows, url = NULL)
 }
 \arguments{
-\item{name}{The name of the station (e.g. "Fremont Bridge)}
+\item{name}{The name of the station (e.g. "Fremont Bridge")}
 
 \item{code}{Water monitoring station code (e.g. "FBLW")}
 
+\item{project}{Code for project (e.g. "LKW" for Lake Washington Ship Canal)}
+
 \item{data_columns}{Vector of names of columns in the data}
+
+\item{data_units}{Vector of units corresponding to each entry in data_columns}
 
 \item{depths}{Vector of depths, in feet, for the station's measurements}
 
