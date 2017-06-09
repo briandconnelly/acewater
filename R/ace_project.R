@@ -4,6 +4,7 @@
 #' @param code Project code (e.g. "PND")
 #' @param stations List of stations (\code{\link{ace_station}}) keyed by station
 #' code
+#' @param info_url Web URL for more information about project
 #'
 #' @return A \code{ace_project} object
 #' @export
@@ -17,13 +18,13 @@
 #' )
 #' }
 #'
-ace_project <- function(name, code, stations = list(), web_url = NULL) {
+ace_project <- function(name, code, stations = list(), info_url = NULL) {
     structure(
         list(
             name = name,
             code = code,
             stations = stations,
-            web_url = web_url
+            info_url = info_url
         ),
         class = "ace_project"
     )

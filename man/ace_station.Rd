@@ -6,7 +6,7 @@
 \usage{
 ace_station(name, code, project, data_columns, data_units = c(),
   depths = c(), data_skiprows, data_url = NULL, latitude = NULL,
-  longitude = NULL, web_url = NULL)
+  longitude = NULL, info_url = NULL)
 }
 \arguments{
 \item{name}{The name of the station (e.g. "Fremont Bridge")}
@@ -30,7 +30,7 @@ standard url scheme and the monitoring station code.}
 
 \item{longitude}{Station's longitude}
 
-\item{web_url}{URL providing information about the station}
+\item{info_url}{Web URL providing information about the station}
 }
 \value{
 An \code{ace_station} object

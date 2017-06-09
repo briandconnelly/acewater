@@ -4,7 +4,7 @@
 \alias{ace_project}
 \title{Create Object Representing a Water Monitoring Project/Basin}
 \usage{
-ace_project(name, code, stations = list(), web_url = NULL)
+ace_project(name, code, stations = list(), info_url = NULL)
 }
 \arguments{
 \item{name}{The name of the project (e.g. "Pend Oreille River Basin")}
@@ -13,6 +13,8 @@ ace_project(name, code, stations = list(), web_url = NULL)
 
 \item{stations}{List of stations (\code{\link{ace_station}}) keyed by station
 code}
+
+\item{info_url}{Web URL for more information about project}
 }
 \value{
 A \code{ace_project} object

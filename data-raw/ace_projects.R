@@ -170,7 +170,8 @@ ace_projects <- list(
                 data_columns = c("Time", "ElevForebay", "Inflow", "Outflow"),
                 data_units = c("", "ft", "cfs", "cfs"),
                 depths = c(),
-                data_skiprows = 5
+                data_skiprows = 5,
+                info_url = "http://www.nwd-wc.usace.army.mil/dd/common/projects/www/chj.html"
             ),
             "YUMW" = ace_station(
                 name = " Yakima River at Cle Elum",
@@ -206,7 +207,8 @@ ace_projects <- list(
                 data_columns = c("Time", "ElevForebay", "Inlow", "Outflow"),
                 data_units = c("", "ft", "cfs", "cfs"),
                 depths = c(),
-                data_skiprows = 5
+                data_skiprows = 5,
+                info_url = "http://www.nwd-wc.usace.army.mil/dd/common/projects/www/gcl.html"
             ),
             "KIOW" = ace_station(
                 name = "Yakima River near Kiona",
@@ -338,7 +340,8 @@ ace_projects <- list(
                 data_columns = c("Time", "ElevForebay", "Discharge"),
                 data_units = c("", "ft", "cfs"),
                 depths = c(),
-                data_skiprows = 5
+                data_skiprows = 5,
+                info_url = "http://www.nwd-wc.usace.army.mil/dd/common/projects/www/cab.html"
             ),
             "CFMM" = ace_station(
                 name = "Flathead near Columbia Falls",
@@ -356,7 +359,8 @@ ace_projects <- list(
                 data_columns = c("Time", "ElevForebay", "Inflow", "Outflow"),
                 data_units = c("", "ft", "cfs", "cfs"),
                 depths = c(),
-                data_skiprows = 5
+                data_skiprows = 5,
+                info_url = "http://www.nwd-wc.usace.army.mil/dd/common/projects/www/hgh.html"
             ),
             "KER" = ace_station(
                 name = "Selis, Ksanka and Qlispe Dam (formerly Kerr)",
@@ -365,7 +369,8 @@ ace_projects <- list(
                 data_columns = c("Time", "ElevForebay", "Outflow"),
                 data_units = c("", "ft", "cfs"),
                 depths = c(),
-                data_skiprows = 5
+                data_skiprows = 5,
+                info_url = "http://www.nwd-wc.usace.army.mil/dd/common/projects/www/ker.html"
             ),
             "ABOM" = ace_station(
                 name = "Clark Fork River above Missoula",
@@ -392,7 +397,8 @@ ace_projects <- list(
                 data_columns = c("Time", "ElevForebay", "Discharge"),
                 data_units = c("", "ft", "cfs"),
                 depths = c(),
-                data_skiprows = 5
+                data_skiprows = 5,
+                info_url = "http://www.nwd-wc.usace.army.mil/dd/common/projects/www/nox.html"
             ),
             "SRGM" = ace_station(
                 name = "Clark Fork River at St. Regis",
@@ -434,7 +440,8 @@ ace_projects <- list(
                 data_columns = c("Time", "ElevForebay", "Storage", "Stage", "Discharge", "Inflow", "Precipitation", "Incr", "Temperature"),
                 data_units = c("", "ft", "ac-ft", "ft", "cfs", "cfs", "in", "in", "F"),
                 depths = c(),
-                data_skiprows = 6
+                data_skiprows = 6,
+                info_url = "http://www.nwd-wc.usace.army.mil/dd/common/projects/www/hah.html"
             ),
             "HAHW" = ace_station(
                 name = "Howard Hanson Dam Tailwater",
@@ -725,7 +732,8 @@ ace_projects <- list(
                 depths = c(),
                 data_skiprows = 5
             )
-        )
+        ),
+        info_url = "http://www.nwd-wc.usace.army.mil/dd/common/projects/www/lwsc.html"
     ),
     "PND" = ace_project(
         name = "Pend Oreille River Basin",
@@ -783,7 +791,8 @@ ace_projects <- list(
                 data_columns = c("Time", "ElevForebay", "Discharge"),
                 data_units = c("", "ft", "cfs"),
                 depths = c(),
-                data_skiprows = 5
+                data_skiprows = 5,
+                info_url = "http://www.nwd-wc.usace.army.mil/dd/common/projects/www/nox.html"
             ),
             "RCRI" = ace_station(
                 name = "Riley Creek at Laclede",
@@ -850,7 +859,8 @@ ace_projects <- list(
                 data_columns = c("Time", "Flow"),
                 data_units = c("", "cfs"),
                 depths = c(),
-                data_skiprows = 5
+                data_skiprows = 5,
+                info_url = "http://www.nwd-wc.usace.army.mil/dd/common/projects/www/tom.html"
             )
         )
     ),
@@ -901,7 +911,8 @@ ace_projects <- list(
                 data_columns = c("Time", "Stage"),
                 data_units = c("", "ft"),
                 depths = c(),
-                data_skiprows = 5
+                data_skiprows = 5,
+                info_url = "http://www.nwd-wc.usace.army.mil/dd/common/projects/www/mmd.html"
             ),
             "LTDW" = ace_station(
                 name = "Lake Tapps Diversion near Dieringer",

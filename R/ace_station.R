@@ -14,7 +14,7 @@
 #' standard url scheme and the monitoring station code.
 #' @param latitude Station's latitude
 #' @param longitude Station's longitude
-#' @param web_url URL providing information about the station
+#' @param info_url Web URL providing information about the station
 #'
 #' @return An \code{ace_station} object
 #' @export
@@ -38,7 +38,7 @@ ace_station <- function(name,
                         data_url = NULL,
                         latitude = NULL,
                         longitude = NULL,
-                        web_url = NULL) {
+                        info_url = NULL) {
     x <- structure(
         list(
             name = name,
@@ -59,7 +59,7 @@ ace_station <- function(name,
             ),
             latitude = latitude,
             longitude = longitude,
-            web_url = web_url
+            info_url = info_url
         ),
         class = "ace_station"
     )
