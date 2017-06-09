@@ -46,7 +46,7 @@ get_water_conditions(station = "GCL", project = "EWA")
 ```{r Example: Fremont Bridge}
 library(acewater)
 
-get_water_conditions(project = "LKW", station = "FBLW")
+get_water_conditions(station = "FBLW", project = "LKW")
 ```
 
 

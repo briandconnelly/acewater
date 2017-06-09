@@ -10,7 +10,7 @@ get_water_conditions(station, na.rm = FALSE, ...)
 
 \method{get_water_conditions}{ace_station}(station, na.rm = FALSE, ...)
 
-\method{get_water_conditions}{character}(project, station, na.rm = FALSE, ...)
+\method{get_water_conditions}{character}(station, project, na.rm = FALSE, ...)
 }
 \arguments{
 \item{station}{Water monitoring station specified as a code (e.g. "FBLW") or as an \code{ace_water} object (e.g. from \code{get_station("FBLW")})}
@@ -18,6 +18,8 @@ get_water_conditions(station, na.rm = FALSE, ...)
 \item{na.rm}{A logical value indicating whether \code{NA} values should be removed from the results (default: \code{FALSE})}
 
 \item{...}{Additional arguments (not supported)}
+
+\item{project}{Station's project code (e.g. "LKW")}
 }
 \value{
 A tibble

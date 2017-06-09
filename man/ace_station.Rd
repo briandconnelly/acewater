@@ -43,6 +43,7 @@ information about water monitoring stations
 my_station <- ace_station(
     name = "Fremont Bridge",
     code = "FBLW",
+    project = "LKW",
     data_columns = c("Time", "SaltA", "SaltB", "SaltC", "TempA", "TempB", "TempC"),
     depths = c("A" = 18, "B" = 31, "C" = 40),
     data_skiprows = 5

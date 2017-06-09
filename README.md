@@ -46,20 +46,20 @@ get_water_conditions(station = "GCL", project = "EWA")
 ``` r
 library(acewater)
 
-get_water_conditions(project = "LKW", station = "FBLW")
+get_water_conditions(station = "FBLW", project = "LKW")
 #> # A tibble: 156 x 6
 #>                   Time Project Station Depth  Measure Value
 #>                 <dttm>  <fctr>  <fctr> <dbl>   <fctr> <dbl>
-#>  1 2017-06-08 11:00:00     LKW    FBLW    18 Salinity  0.04
-#>  2 2017-06-08 12:00:00     LKW    FBLW    18 Salinity  0.04
-#>  3 2017-06-08 13:00:00     LKW    FBLW    18 Salinity  0.04
-#>  4 2017-06-08 14:00:00     LKW    FBLW    18 Salinity  0.04
-#>  5 2017-06-08 15:00:00     LKW    FBLW    18 Salinity  0.04
-#>  6 2017-06-08 16:00:00     LKW    FBLW    18 Salinity  0.04
-#>  7 2017-06-08 17:00:00     LKW    FBLW    18 Salinity  0.04
-#>  8 2017-06-08 18:00:00     LKW    FBLW    18 Salinity  0.04
-#>  9 2017-06-08 19:00:00     LKW    FBLW    18 Salinity  0.04
-#> 10 2017-06-08 20:00:00     LKW    FBLW    18 Salinity  0.04
+#>  1 2017-06-08 12:00:00     LKW    FBLW    18 Salinity  0.04
+#>  2 2017-06-08 13:00:00     LKW    FBLW    18 Salinity  0.04
+#>  3 2017-06-08 14:00:00     LKW    FBLW    18 Salinity  0.04
+#>  4 2017-06-08 15:00:00     LKW    FBLW    18 Salinity  0.04
+#>  5 2017-06-08 16:00:00     LKW    FBLW    18 Salinity  0.04
+#>  6 2017-06-08 17:00:00     LKW    FBLW    18 Salinity  0.04
+#>  7 2017-06-08 18:00:00     LKW    FBLW    18 Salinity  0.04
+#>  8 2017-06-08 19:00:00     LKW    FBLW    18 Salinity  0.04
+#>  9 2017-06-08 20:00:00     LKW    FBLW    18 Salinity  0.04
+#> 10 2017-06-08 21:00:00     LKW    FBLW    18 Salinity  0.04
 #> # ... with 146 more rows
 ```
 
@@ -73,16 +73,16 @@ purrr::map_df(c("UBLW", "FBLW", "LLLW"), get_water_conditions, project = "LKW")
 #> # A tibble: 520 x 6
 #>                   Time Project Station Depth  Measure Value
 #>                 <dttm>  <fctr>   <chr> <dbl>   <fctr> <dbl>
-#>  1 2017-06-08 11:00:00     LKW    UBLW     8 Salinity  0.03
-#>  2 2017-06-08 12:00:00     LKW    UBLW     8 Salinity  0.03
-#>  3 2017-06-08 13:00:00     LKW    UBLW     8 Salinity  0.03
-#>  4 2017-06-08 14:00:00     LKW    UBLW     8 Salinity  0.03
-#>  5 2017-06-08 15:00:00     LKW    UBLW     8 Salinity  0.03
-#>  6 2017-06-08 16:00:00     LKW    UBLW     8 Salinity  0.03
-#>  7 2017-06-08 17:00:00     LKW    UBLW     8 Salinity  0.03
-#>  8 2017-06-08 18:00:00     LKW    UBLW     8 Salinity  0.03
-#>  9 2017-06-08 19:00:00     LKW    UBLW     8 Salinity  0.03
-#> 10 2017-06-08 20:00:00     LKW    UBLW     8 Salinity  0.03
+#>  1 2017-06-08 12:00:00     LKW    UBLW     8 Salinity  0.03
+#>  2 2017-06-08 13:00:00     LKW    UBLW     8 Salinity  0.03
+#>  3 2017-06-08 14:00:00     LKW    UBLW     8 Salinity  0.03
+#>  4 2017-06-08 15:00:00     LKW    UBLW     8 Salinity  0.03
+#>  5 2017-06-08 16:00:00     LKW    UBLW     8 Salinity  0.03
+#>  6 2017-06-08 17:00:00     LKW    UBLW     8 Salinity  0.03
+#>  7 2017-06-08 18:00:00     LKW    UBLW     8 Salinity  0.03
+#>  8 2017-06-08 19:00:00     LKW    UBLW     8 Salinity  0.03
+#>  9 2017-06-08 20:00:00     LKW    UBLW     8 Salinity  0.03
+#> 10 2017-06-08 21:00:00     LKW    UBLW     8 Salinity  0.03
 #> # ... with 510 more rows
 ```
 
