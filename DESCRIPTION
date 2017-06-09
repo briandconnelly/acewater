@@ -3,7 +3,7 @@ Type: Package
 Title: Download Water Conditions Waterways in the Seattle Area
 Description: This package returns tidy data from the US Army Corps of Engineers'
     water quality data for the Seattle District.
-Version: 0.3.0
+Version: 0.4.0
 Authors@R: c(person(given = "Brian", family = "Connelly",
              email = "bdc@bconnelly.net", role = c("aut", "cre")))
 License: MIT + file LICENSE

@@ -1,4 +1,4 @@
-# acewater NEXT
+# acewater 0.4.0 (2017-06-09)
 
 * Added stations for all Seattle District projects: Chehalis River Basin, Eastern Washington Rivers, Flathead and Clark Fork Rivers, Green River Basin, Kootenai River Basin, Pend Oreille River Basin, Puyallup River Basin, and Skagit River Basin
 * Updated `ace_station` structure
