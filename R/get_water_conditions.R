@@ -62,6 +62,11 @@ get_water_conditions.ace_station <- function(station, na.rm = FALSE, ...) {
 
     if (na.rm) z %<>% stats::na.omit()
 
+    class(z) <- union("ace_conditions", class(z))
+    attr(z, "project_name") <- ace_projects[[station$project]]$name
+    attr(z, "station_name") <- station$name
+    attr(z, "retrieved") <- Sys.time()
+
     z
 }
 

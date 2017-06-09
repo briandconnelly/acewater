@@ -20,7 +20,9 @@ ace_projects <- list(
                 data_columns = c("Time", "Stage", "Flow"),
                 data_units = c("", "ft", "cfs"),
                 depths = c(),
-                data_skiprows = 5
+                data_skiprows = 5,
+                latitude = 47.0114831,
+                longitude = -123.6554417
             ),
             "SKMW" = ace_station(
                 name = "Skookumchuck River Near Centralia",
@@ -171,7 +173,9 @@ ace_projects <- list(
                 data_units = c("", "ft", "cfs", "cfs"),
                 depths = c(),
                 data_skiprows = 5,
-                info_url = "http://www.nwd-wc.usace.army.mil/dd/common/projects/www/chj.html"
+                info_url = "http://www.nwd-wc.usace.army.mil/dd/common/projects/www/chj.html",
+                latitude = 47.9951139,
+                longitude = -119.6410787
             ),
             "YUMW" = ace_station(
                 name = " Yakima River at Cle Elum",
@@ -341,7 +345,9 @@ ace_projects <- list(
                 data_units = c("", "ft", "cfs"),
                 depths = c(),
                 data_skiprows = 5,
-                info_url = "http://www.nwd-wc.usace.army.mil/dd/common/projects/www/cab.html"
+                info_url = "http://www.nwd-wc.usace.army.mil/dd/common/projects/www/cab.html",
+                latitude = 48.086667,
+                longitude = -116.064444
             ),
             "CFMM" = ace_station(
                 name = "Flathead near Columbia Falls",
@@ -360,7 +366,9 @@ ace_projects <- list(
                 data_units = c("", "ft", "cfs", "cfs"),
                 depths = c(),
                 data_skiprows = 5,
-                info_url = "http://www.nwd-wc.usace.army.mil/dd/common/projects/www/hgh.html"
+                info_url = "http://www.nwd-wc.usace.army.mil/dd/common/projects/www/hgh.html",
+                latitude = 48.3411111,
+                longitude = -114.0133333
             ),
             "KER" = ace_station(
                 name = "Selis, Ksanka and Qlispe Dam (formerly Kerr)",
@@ -370,7 +378,9 @@ ace_projects <- list(
                 data_units = c("", "ft", "cfs"),
                 depths = c(),
                 data_skiprows = 5,
-                info_url = "http://www.nwd-wc.usace.army.mil/dd/common/projects/www/ker.html"
+                info_url = "http://www.nwd-wc.usace.army.mil/dd/common/projects/www/ker.html",
+                latitude = 47.6969444,
+                longitude = -114.1613889
             ),
             "ABOM" = ace_station(
                 name = "Clark Fork River above Missoula",
@@ -398,7 +408,9 @@ ace_projects <- list(
                 data_units = c("", "ft", "cfs"),
                 depths = c(),
                 data_skiprows = 5,
-                info_url = "http://www.nwd-wc.usace.army.mil/dd/common/projects/www/nox.html"
+                info_url = "http://www.nwd-wc.usace.army.mil/dd/common/projects/www/nox.html",
+                latitude = 47.96,
+                longitude = -115.734444
             ),
             "SRGM" = ace_station(
                 name = "Clark Fork River at St. Regis",
@@ -621,7 +633,9 @@ ace_projects <- list(
                                  "TemperatureC"),
                 data_units = c("", "g/L", "g/L", "g/L", "F", "F", "F"),
                 depths = c("A" = 11, "B" = 21, "C" = 32),
-                data_skiprows = 5
+                data_skiprows = 5,
+                latitude = 47.6601754,
+                longitude = -122.3756478
             ),
             "FBLW" = ace_station(
                 name = "Fremont Bridge",
@@ -636,7 +650,9 @@ ace_projects <- list(
                                  "TemperatureC"),
                 data_units = c("", "g/L", "g/L", "g/L", "F", "F", "F"),
                 depths = c("A" = 18, "B" = 31, "C" = 40),
-                data_skiprows = 5
+                data_skiprows = 5,
+                latitude = NA,
+                longitude = NA
             ),
             "UBLW" = ace_station(
                 name = "University Bridge",
@@ -651,7 +667,9 @@ ace_projects <- list(
                                  "TemperatureC"),
                 data_units = c("", "g/L", "g/L", "g/L", "F", "F", "F"),
                 depths = c("A" = 8, "B" = 21, "C" = 35),
-                data_skiprows = 5
+                data_skiprows = 5,
+                latitude = 47.6534113,
+                longitude = -122.3199712
             ),
             "GWLW" = ace_station(
                 name = "Gas Works Park",
@@ -668,7 +686,9 @@ ace_projects <- list(
                                  "TemperatureD"),
                 data_units = c("", "g/L", "g/L", "g/L", "g/L", "F", "F", "F", "F"),
                 depths = c("A" = 5, "B" = 14, "C" = 29, "D" = 44),
-                data_skiprows = 5
+                data_skiprows = 5,
+                latitude = 47.6341431,
+                longitude = -122.3305284
             ),
             "LLLW" = ace_station(
                 name = "Large Lock",
@@ -685,7 +705,9 @@ ace_projects <- list(
                                  "TemperatureD"),
                 data_units = c("", "g/L", "g/L", "g/L", "g/L", "F", "F", "F", "F"),
                 depths = c("A" = 18, "B" = 28, "C" = 36, "D" = 43),
-                data_skiprows = 5
+                data_skiprows = 5,
+                latitude = 47.6652505,
+                longitude = -122.3938905
             ),
             "FISH2" = ace_station(
                 name = "Fish Ladder",
@@ -719,7 +741,9 @@ ace_projects <- list(
                                  "Elevation"),
                 data_units = c("", "ft"),
                 depths = c(),
-                data_skiprows = 5
+                data_skiprows = 5,
+                latitude = NA,
+                longitude = NA
             ),
             "RNTW" = ace_station(
                 name = "Cedar River at Renton",
@@ -730,7 +754,9 @@ ace_projects <- list(
                                  "Flow"),
                 data_units = c("", "ft", "cfs"),
                 depths = c(),
-                data_skiprows = 5
+                data_skiprows = 5,
+                latitude = NA,
+                longitude = NA
             )
         ),
         info_url = "http://www.nwd-wc.usace.army.mil/dd/common/projects/www/lwsc.html"
@@ -746,7 +772,9 @@ ace_projects <- list(
                 data_columns = c("Time", "ElevForebay", "FlowResOut"),
                 data_units = c("", "ft", "cfs"),
                 depths = c(),
-                data_skiprows = 5
+                data_skiprows = 5,
+                latitude = 48.17925,
+                longitude = -116.999674
             ),
             "BOX" = ace_station(
                 name = "Box Canyon",
@@ -755,7 +783,9 @@ ace_projects <- list(
                 data_columns = c("Time", "ElevForebay", "Discharge"),
                 data_units = c("", "ft", "cfs"),
                 depths = c(),
-                data_skiprows = 5
+                data_skiprows = 5,
+                latitude = 48.780278,
+                longitude = -117.4125
             ),
             "CAB" = ace_station(
                 name = "Cabinet Gorge",
@@ -764,7 +794,9 @@ ace_projects <- list(
                 data_columns = c("Time", "ElevForebay", "Discharge"),
                 data_units = c("", "ft", "cfs"),
                 depths = c(),
-                data_skiprows = 5
+                data_skiprows = 5,
+                latitude = 48.086667,
+                longitude = -116.064444
             ),
             "HOPI" = ace_station(
                 name = "Pend Oreille Lake at Hope",
@@ -773,7 +805,9 @@ ace_projects <- list(
                 data_columns = c("Time", "LakeElevation", "Manometer", "BYVILakeElevation"),
                 data_units = c("", "ft", "ft", "ft"),
                 depths = c(),
-                data_skiprows = 6
+                data_skiprows = 6,
+                latitude = 48.25,
+                longitude = -116.32
             ),
             "ALFW" = ace_station(
                 name = "Hope Wind Gages on Lake Pend Oreille",
@@ -782,7 +816,9 @@ ace_projects <- list(
                 data_columns = c("Time", "Direction", "Speed"),
                 data_units = c("", "deg", "mph"),
                 depths = c(),
-                data_skiprows = 5
+                data_skiprows = 5,
+                latitude = 48.1822284,
+                longitude = -117.0342942
             ),
             "NOX" = ace_station(
                 name = "Noxon Rapids",
@@ -792,7 +828,9 @@ ace_projects <- list(
                 data_units = c("", "ft", "cfs"),
                 depths = c(),
                 data_skiprows = 5,
-                info_url = "http://www.nwd-wc.usace.army.mil/dd/common/projects/www/nox.html"
+                info_url = "http://www.nwd-wc.usace.army.mil/dd/common/projects/www/nox.html",
+                latitude = 47.96,
+                longitude = -115.734444
             ),
             "RCRI" = ace_station(
                 name = "Riley Creek at Laclede",
@@ -801,7 +839,9 @@ ace_projects <- list(
                 data_columns = c("Time", "AirTemperature", "WaterTemperature", "Depth"),
                 data_units = c("", "F", "F", "ft"),
                 depths = c(),
-                data_skiprows = 5
+                data_skiprows = 5,
+                latitude = 48.159556,
+                longitude = -116.770639
             ),
             # TODO: problems parsing this one
             "RCRIAFDD" = ace_station(
@@ -840,7 +880,9 @@ ace_projects <- list(
                 data_columns = c("Time", "AirTemperature", "WaterTemperature", "Depth"),
                 data_units = c("", "F", "F", "ft"),
                 depths = c(),
-                data_skiprows = 5
+                data_skiprows = 5,
+                latitude = 48.470869,
+                longitude = -117.302653
             ),
             # TODO: not parsing properly
             "CUIWAFDD" = ace_station(
@@ -1047,7 +1089,9 @@ ace_projects <- list(
                 data_columns = c("Time", "ElevForebay", "Stage", "Flow"),
                 data_units = c("", "ft", "ft", "cfs"),
                 depths = c(),
-                data_skiprows = 5
+                data_skiprows = 5,
+                latitude =  48.5478928,
+                longitude = -121.7406956
             ),
             "UBK" = ace_station(
                 name = "Upper Baker Lake",
@@ -1056,7 +1100,9 @@ ace_projects <- list(
                 data_columns = c("Time", "ElevForebay", "PrecipitationInc"),
                 data_units = c("", "ft", "in"),
                 depths = c(),
-                data_skiprows = 5
+                data_skiprows = 5,
+                latitude = 48.6492853,
+                longitude = -121.6906957
             ),
             "CONW" = ace_station(
                 name = "Skagit River near Concrete",
@@ -1065,7 +1111,9 @@ ace_projects <- list(
                 data_columns = c("Time", "Stage", "Flow"),
                 data_units = c("", "ft", "cfs"),
                 depths = c(),
-                data_skiprows = 6
+                data_skiprows = 6,
+                latitude = 48.5242806,
+                longitude = -121.770974
             ),
             "DIA" = ace_station(
                 name = "Diablo Dam Lake",
@@ -1074,7 +1122,9 @@ ace_projects <- list(
                 data_columns = c("Time", "ElevForebay", "Inflow", "Outflow"),
                 data_units = c("", "ft", "cfs", "cfs"),
                 depths = c(),
-                data_skiprows = 5
+                data_skiprows = 5,
+                latitude = 48.7155556,
+                longitude = -121.1505556
             ),
             "SRMW" = ace_station(
                 name = "Skagit River above Marblemount",
@@ -1083,7 +1133,9 @@ ace_projects <- list(
                 data_columns = c("Time", "Stage", "Flow", "Precipitation"),
                 data_units = c("", "ft", "cfs"),
                 depths = c(),
-                data_skiprows = 5
+                data_skiprows = 5,
+                latitude = 48.5337306,
+                longitude = -121.4298499
             ),
             "MVEW" = ace_station(
                 name = "Skagi River near Mount Vernon",
@@ -1092,7 +1144,9 @@ ace_projects <- list(
                 data_columns = c("Time", "Stage", "Flow"),
                 data_units = c("", "ft", "cfs"),
                 depths = c(),
-                data_skiprows = 5
+                data_skiprows = 5,
+                latitude = 48.4448278,
+                longitude = -122.3354369
             ),
             "GORW" = ace_station(
                 name = "Skagit River at Newhalem",
@@ -1119,7 +1173,9 @@ ace_projects <- list(
                 data_columns = c("Time", "ElevForebay", "Inflow", "Outflow"),
                 data_units = c("", "ft", "cfs", "cfs"),
                 depths = c(),
-                data_skiprows = 5
+                data_skiprows = 5,
+                latitude = 48.7327778,
+                longitude = -121.067222
             ),
             "SAKW" = ace_station(
                 name = "Sauk River near Sauk",
