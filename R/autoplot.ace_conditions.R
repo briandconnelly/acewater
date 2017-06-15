@@ -34,6 +34,10 @@ autoplot.ace_conditions <- function(object, title = NULL, subtitle = NULL, ...) 
         )
     }
 
+    if (is.null(subtitle) && !is.null(attr(object, "retrieved"))) {
+        subtitle <- sprintf("Data Retrieved %s", attr(object, "retrieved"))
+    }
+
     p <- ggplot2::ggplot(
         data = object,
         mapping = ggplot2::aes(
