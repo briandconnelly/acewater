@@ -28,16 +28,16 @@ get_water_conditions(station = "GCL", project = "EWA")
 #> # A tibble: 42 x 6
 #>          Time Project Station Depth     Measure   Value
 #>        <dttm>  <fctr>  <fctr> <dbl>      <fctr>   <dbl>
-#>  1 2017-05-27     EWA     GCL    NA ElevForebay 1250.21
-#>  2 2017-05-28     EWA     GCL    NA ElevForebay 1251.64
-#>  3 2017-05-29     EWA     GCL    NA ElevForebay 1252.05
-#>  4 2017-05-30     EWA     GCL    NA ElevForebay 1254.28
-#>  5 2017-05-31     EWA     GCL    NA ElevForebay 1255.93
-#>  6 2017-06-01     EWA     GCL    NA ElevForebay 1258.06
-#>  7 2017-06-02     EWA     GCL    NA ElevForebay 1260.49
-#>  8 2017-06-03     EWA     GCL    NA ElevForebay 1263.29
-#>  9 2017-06-04     EWA     GCL    NA ElevForebay 1265.77
-#> 10 2017-06-05     EWA     GCL    NA ElevForebay 1267.69
+#>  1 2017-06-02     EWA     GCL    NA ElevForebay 1260.49
+#>  2 2017-06-03     EWA     GCL    NA ElevForebay 1263.29
+#>  3 2017-06-04     EWA     GCL    NA ElevForebay 1265.77
+#>  4 2017-06-05     EWA     GCL    NA ElevForebay 1267.69
+#>  5 2017-06-06     EWA     GCL    NA ElevForebay 1269.61
+#>  6 2017-06-07     EWA     GCL    NA ElevForebay 1271.45
+#>  7 2017-06-08     EWA     GCL    NA ElevForebay 1272.87
+#>  8 2017-06-09     EWA     GCL    NA ElevForebay 1274.10
+#>  9 2017-06-10     EWA     GCL    NA ElevForebay 1275.37
+#> 10 2017-06-11     EWA     GCL    NA ElevForebay 1276.71
 #> # ... with 32 more rows
 ```
 
@@ -50,16 +50,16 @@ get_water_conditions(station = "FBLW", project = "LKW")
 #> # A tibble: 156 x 6
 #>                   Time Project Station Depth  Measure Value
 #>                 <dttm>  <fctr>  <fctr> <dbl>   <fctr> <dbl>
-#>  1 2017-06-08 12:00:00     LKW    FBLW    18 Salinity  0.04
-#>  2 2017-06-08 13:00:00     LKW    FBLW    18 Salinity  0.04
-#>  3 2017-06-08 14:00:00     LKW    FBLW    18 Salinity  0.04
-#>  4 2017-06-08 15:00:00     LKW    FBLW    18 Salinity  0.04
-#>  5 2017-06-08 16:00:00     LKW    FBLW    18 Salinity  0.04
-#>  6 2017-06-08 17:00:00     LKW    FBLW    18 Salinity  0.04
-#>  7 2017-06-08 18:00:00     LKW    FBLW    18 Salinity  0.04
-#>  8 2017-06-08 19:00:00     LKW    FBLW    18 Salinity  0.04
-#>  9 2017-06-08 20:00:00     LKW    FBLW    18 Salinity  0.04
-#> 10 2017-06-08 21:00:00     LKW    FBLW    18 Salinity  0.04
+#>  1 2017-06-14 14:00:00     LKW    FBLW    18 Salinity  0.04
+#>  2 2017-06-14 15:00:00     LKW    FBLW    18 Salinity  0.04
+#>  3 2017-06-14 16:00:00     LKW    FBLW    18 Salinity  0.04
+#>  4 2017-06-14 17:00:00     LKW    FBLW    18 Salinity  0.04
+#>  5 2017-06-14 18:00:00     LKW    FBLW    18 Salinity  0.04
+#>  6 2017-06-14 19:00:00     LKW    FBLW    18 Salinity  0.04
+#>  7 2017-06-14 20:00:00     LKW    FBLW    18 Salinity  0.04
+#>  8 2017-06-14 21:00:00     LKW    FBLW    18 Salinity  0.04
+#>  9 2017-06-14 22:00:00     LKW    FBLW    18 Salinity  0.04
+#> 10 2017-06-14 23:00:00     LKW    FBLW    18 Salinity  0.04
 #> # ... with 146 more rows
 ```
 
@@ -69,22 +69,34 @@ We can use [purrr](http://purrr.tidyverse.org) to combine data from multiple sta
 
 ``` r
 purrr::map_df(c("UBLW", "FBLW", "LLLW"), get_water_conditions, project = "LKW")
-#> Warning in bind_rows_(x, .id): Unequal factor levels: coercing to character
 #> # A tibble: 520 x 6
 #>                   Time Project Station Depth  Measure Value
 #>                 <dttm>  <fctr>   <chr> <dbl>   <fctr> <dbl>
-#>  1 2017-06-08 12:00:00     LKW    UBLW     8 Salinity  0.03
-#>  2 2017-06-08 13:00:00     LKW    UBLW     8 Salinity  0.03
-#>  3 2017-06-08 14:00:00     LKW    UBLW     8 Salinity  0.03
-#>  4 2017-06-08 15:00:00     LKW    UBLW     8 Salinity  0.03
-#>  5 2017-06-08 16:00:00     LKW    UBLW     8 Salinity  0.03
-#>  6 2017-06-08 17:00:00     LKW    UBLW     8 Salinity  0.03
-#>  7 2017-06-08 18:00:00     LKW    UBLW     8 Salinity  0.03
-#>  8 2017-06-08 19:00:00     LKW    UBLW     8 Salinity  0.03
-#>  9 2017-06-08 20:00:00     LKW    UBLW     8 Salinity  0.03
-#> 10 2017-06-08 21:00:00     LKW    UBLW     8 Salinity  0.03
+#>  1 2017-06-14 14:00:00     LKW    UBLW     8 Salinity  0.03
+#>  2 2017-06-14 15:00:00     LKW    UBLW     8 Salinity  0.03
+#>  3 2017-06-14 16:00:00     LKW    UBLW     8 Salinity  0.03
+#>  4 2017-06-14 17:00:00     LKW    UBLW     8 Salinity  0.03
+#>  5 2017-06-14 18:00:00     LKW    UBLW     8 Salinity  0.03
+#>  6 2017-06-14 19:00:00     LKW    UBLW     8 Salinity  0.03
+#>  7 2017-06-14 20:00:00     LKW    UBLW     8 Salinity  0.03
+#>  8 2017-06-14 21:00:00     LKW    UBLW     8 Salinity  0.03
+#>  9 2017-06-14 22:00:00     LKW    UBLW     8 Salinity  0.03
+#> 10 2017-06-14 23:00:00     LKW    UBLW     8 Salinity  0.03
 #> # ... with 510 more rows
 ```
+
+### Plot Water Conditions
+
+We can easily plot the water conditions for a given station (if [ggplot2](http://ggplot2.tidyverse.org) is installed). Here, we'll extend the prevous Fremont Bridge example:
+
+``` r
+library(acewater)
+library(ggplot2)
+
+autoplot(get_water_conditions(station = "FBLW", project = "LKW"))
+```
+
+![](README-Example%20Plot%20Fremont%20Bridge-1.png)
 
 Data Subject to Revision
 ------------------------
