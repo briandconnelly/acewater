@@ -4,8 +4,7 @@
 #' creates a basic plot using the ggplot2 package (if installed).
 #'
 #' @param object An \code{ace_station} object
-#' @param title Plot title
-#' @param subtitle Plot subtitle
+#' @param ... Additional arguments (not used)
 #'
 #' @return A \code{\link[ggplot2]{ggplot}} object
 #' @export

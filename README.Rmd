@@ -36,17 +36,26 @@ devtools::install_github("briandconnelly/acewater")
 ```{r Eaxmple Grand Coulee Dam}
 library(acewater)
 
-get_water_conditions(station = "GCL", project = "EWA")
+(gcl <- get_water_conditions(station = "GCL", project = "EWA"))
+```
+
+We can easily plot the water conditions for a given station (if [ggplot2](http://ggplot2.tidyverse.org) is installed).
+
+```{r Example Plot Grand Coulee Dam}
+library(ggplot2)
+
+autoplot(gcl)
 
 ```
 
 
 ### Get the most recent conditions at the [Fremont Bridge](https://en.wikipedia.org/wiki/Fremont_Bridge_(Seattle)) (station FBLW) in the [Lake Washington Ship Canal](https://en.wikipedia.org/wiki/Lake_Washington_Ship_Canal) (project LKW):
 
-```{r Example Fremont Bridge}
-library(acewater)
+Here, we see that this station monitors different properties:
 
-get_water_conditions(station = "FBLW", project = "LKW")
+```{r Example Fremont Bridge}
+(fblw <- get_water_conditions(station = "FBLW", project = "LKW"))
+autoplot(fblw)
 ```
 
 
@@ -56,21 +65,8 @@ We can use [purrr](http://purrr.tidyverse.org) to combine data from multiple sta
 Here, we'll get data from a few stations along the [Lake Washington Ship Canal](https://en.wikipedia.org/wiki/Lake_Washington_Ship_Canal).
 
 ```{r Example Multiple Stations, message=FALSE, warning = FALSE}
-purrr::map_df(c("UBLW", "FBLW", "LLLW"), get_water_conditions, project = "LKW")
-
-```
-
-
-### Plot Water Conditions
-
-We can easily plot the water conditions for a given station (if [ggplot2](http://ggplot2.tidyverse.org) is installed).
-Here, we'll extend the prevous Fremont Bridge example:
-
-```{r Example Plot Fremont Bridge}
-library(acewater)
-library(ggplot2)
-
-autoplot(get_water_conditions(station = "FBLW", project = "LKW"))
+(lkw <- purrr::map_df(c("UBLW", "FBLW", "LLLW"), get_water_conditions, project = "LKW"))
+autoplot(lkw)
 ```
 
 

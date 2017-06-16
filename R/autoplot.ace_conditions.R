@@ -1,11 +1,11 @@
 #' Plot Water Conditions using ggplot2
 #'
 #' \code{autoplot.ace_conditions} creates a basic plot of water conditions using
-#' the ggplot2 package (if installed).
+#' the ggplot2 package (if installed). Additional formatting can be done by
+#' adding to the object that is returned.
 #'
 #' @param object An \code{ace_conditions} object
-#' @param title Plot title
-#' @param subtitle Plot subtitle
+#' @param ... Additional arguments (not used)
 #'
 #' @return A \code{\link[ggplot2]{ggplot}} object
 #' @export
@@ -18,7 +18,7 @@
 #' cUBLW <- get_water_conditions("UBLW")
 #' autoplot(cUBLW)
 #' }
-autoplot.ace_conditions <- function(object, title = NULL, subtitle = NULL, ...) {
+autoplot.ace_conditions <- function(object, ...) {
     if (!requireNamespace("ggplot2", quietly = TRUE)) {
         stop("This function requires the 'ggplot2' package", call. = FALSE)
     }
@@ -26,7 +26,8 @@ autoplot.ace_conditions <- function(object, title = NULL, subtitle = NULL, ...) 
     project <- as.character(unique(object$Project))
     station <- as.character(unique(object$Station))
 
-    if (is.null(title) && length(project) == 1 && length(station) == 1) {
+    title <- NULL
+    if (length(project) == 1 && length(station) == 1) {
         title <- sprintf(
             "Conditions at %s (%s)",
             ace_projects[[project]]$stations[[station]],
@@ -34,8 +35,9 @@ autoplot.ace_conditions <- function(object, title = NULL, subtitle = NULL, ...) 
         )
     }
 
-    if (is.null(subtitle) && !is.null(attr(object, "retrieved"))) {
-        subtitle <- sprintf("Data Retrieved %s", attr(object, "retrieved"))
+    subtitle <- NULL
+    if (!is.null(attr(object, "retrieved"))) {
+        subtitle <- sprintf("Data retrieved %s", attr(object, "retrieved"))
     }
 
     p <- ggplot2::ggplot(
@@ -46,8 +48,13 @@ autoplot.ace_conditions <- function(object, title = NULL, subtitle = NULL, ...) 
         )
     ) +
         ggplot2::scale_x_datetime() +
-        ggplot2::scale_y_continuous(name = NULL) +
-        ggplot2::ggtitle(label = title, subtitle = subtitle)
+        ggplot2::labs(
+            x = NULL,
+            y = NULL,
+            title = title,
+            subtitle = subtitle#,
+            #caption = caption
+        )
 
     if (all(is.na(object$Depth))) {
         p <- p + ggplot2::geom_line()

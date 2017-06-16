@@ -4,21 +4,20 @@
 \alias{autoplot.ace_conditions}
 \title{Plot Water Conditions using ggplot2}
 \usage{
-autoplot.ace_conditions(object, title = NULL, subtitle = NULL, ...)
+autoplot.ace_conditions(object, ...)
 }
 \arguments{
 \item{object}{An \code{ace_conditions} object}
 
-\item{title}{Plot title}
-
-\item{subtitle}{Plot subtitle}
+\item{...}{Additional arguments (not used)}
 }
 \value{
 A \code{\link[ggplot2]{ggplot}} object
 }
 \description{
 \code{autoplot.ace_conditions} creates a basic plot of water conditions using
-the ggplot2 package (if installed).
+the ggplot2 package (if installed). Additional formatting can be done by
+adding to the object that is returned.
 }
 \examples{
 \dontrun{

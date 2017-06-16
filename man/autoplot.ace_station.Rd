@@ -9,9 +9,7 @@ autoplot.ace_station(object, ...)
 \arguments{
 \item{object}{An \code{ace_station} object}
 
-\item{title}{Plot title}
-
-\item{subtitle}{Plot subtitle}
+\item{...}{Additional arguments (not used)}
 }
 \value{
 A \code{\link[ggplot2]{ggplot}} object
