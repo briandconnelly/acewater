@@ -2,7 +2,9 @@ acewater
 ================
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active) [![license](https://img.shields.io/github/license/mashape/apistatus.svg)]()
+[![Project Status: Abandoned – Initial development has started, but there has not yet been a stable, usable release; the project has been abandoned and the author(s) do not intend on continuing development.](https://www.repostatus.org/badges/latest/abandoned.svg)](https://www.repostatus.org/#abandoned) [![license](https://img.shields.io/github/license/mashape/apistatus.svg)]()
+
+**Note:** The data feeds used by this package are no longer publicly available, so this package does not work
 
 acewater provides an interface to the real-time water monitoring data provided by the [Water Management Section of the Seattle District Corps of Engineers](http://www.nwd-wc.usace.army.mil/nws/hh/www/index.html), which covers most of Washington, Northern Idaho, and Northwestern Montana. The main function, `get_water_conditions` returns a tidy data frame (a [tibble](http://tibble.tidyverse.org)).
 
